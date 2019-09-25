@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SportsStore6.Models;
+using System.Linq;
 using SportsStore6.Models.ViewModels;
 
 namespace SportsStore6.Controllers
 {
+
     public class ProductController : Controller
     {
         private IProductRepository repository;
@@ -17,7 +15,8 @@ namespace SportsStore6.Controllers
         {
             repository = repo;
         }
-        public ViewResult List(string category,int productPage = 1)
+
+        public ViewResult List(string category, int productPage = 1)
             => View(new ProductsListViewModel
             {
                 Products = repository.Products
